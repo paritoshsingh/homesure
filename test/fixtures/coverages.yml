@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  liability: 9.99
+  deductible: 9.99
+
+two:
+  name: MyString
+  liability: 9.99
+  deductible: 9.99

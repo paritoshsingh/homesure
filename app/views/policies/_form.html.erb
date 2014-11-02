@@ -1,0 +1,80 @@
+<%= form_for @policy, :html => { :class => "form-horizontal policy" } do |f| %>
+
+    <% if @policy.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@policy.errors.count, "error") %> prohibited this policy from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @policy.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :shortdesc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :shortdesc, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:shortdesc]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :longdesc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :longdesc, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:longdesc]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :monthlypremium, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :monthlypremium, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:monthlypremium]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :annualpremium, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :annualpremium, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:annualpremium]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :policylimit, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :policylimit, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:policylimit]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :exclusionperiod, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :exclusionperiod, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:exclusionperiod]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :minretentionperiod, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :minretentionperiod, :class => 'form-control' %>
+    </div>
+    <%= error_span(@policy[:minretentionperiod]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            policies_path, :class => 'btn btn-default' %>
+
+<% end %>
